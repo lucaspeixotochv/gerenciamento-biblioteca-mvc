@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Livros</title>
+</head>
+<body>
+    <header>
+        <h1>Pesquisar Livros</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Ver Todos os Livros</a></li>
+                <li><a href="/add-book">Adicionar Novo Livro</a></li>
+                <li><a href="/borrow">Fazer emprestimo</a></li>
+                <li><a href="/return-book">Devolver Livro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Pesquisar por Título ou Autor</h2>
+        <form action="/search" method="GET">
+            <label for="searchTerm">Termo de Pesquisa:</label>
+            <input type="text" id="searchTerm" name="searchTerm" required>
+            <button type="submit">Pesquisar</button>
+        </form>
+        <h3>Resultados da Pesquisa</h3>
+        <% if (searchResults.length > 0) { %>
+            <ul>
+                <% searchResults.forEach(book => { %>
+                    <li><%= book.title %> por <%= book.author %></li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>Nenhum resultado encontrado para "<%= searchTerm %>."</p>
+        <% } %>
+    </main>
+    <footer>
+        <p>&copy; 2024 Biblioteca</p>
+    </footer>
+</body>
+</html>

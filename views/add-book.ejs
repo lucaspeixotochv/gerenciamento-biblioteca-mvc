@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Novo Livro</title>
+</head>
+<body>
+    <header>
+        <h1>Adicionar Novo Livro</h1>
+        <nav>
+            <ul>
+              <li><a href="/">Ver Todos os Livros</a></li>
+              <li><a href="/search">Pesquisar Livros</a></li>
+              <li><a href="/add-book">Adicionar Novo Livro</a></li>
+              <li><a href="/return-book">Devolver Livro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Preencha as informações do novo livro</h2>
+        <form action="add-book" method="POST">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required><br>
+            <label for="author">Autor:</label>
+            <input type="text" id="author" name="author" required><br>
+            <button type="submit">Adicionar Livro</button>
+        </form>
+        <% if (message) { %>
+            <p><%= message %></p>
+        <% } %>
+    </main>
+    <footer>
+        <p>&copy; 2024 Biblioteca</p>
+    </footer>
+</body>
+</html>

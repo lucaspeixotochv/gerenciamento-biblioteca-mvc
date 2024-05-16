@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+</head>
+<body>
+    <header>
+        <h1>Biblioteca</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Ver Todos os Livros</a></li>
+                <li><a href="/search">Pesquisar Livros</a></li>
+                <li><a href="/add-book">Adicionar Novo Livro</a></li>
+                <li><a href="/borrow">Fazer emprestimo</a></li>
+                <li><a href="/return-book">Devolver Livro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Últimos Livros Adicionados</h2>
+         <% if (books.length > 0) { %>
+            <h3>Livros Adicionados</h3>
+            <ul>
+                <% books.forEach(book => { %>
+                    <li>
+                        <a href="/books/<%= book.id %>">
+                            <%= book.title %> por <%= book.author %>
+                        </a>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>Nenhum livro adicionado ainda.</p>
+        <% } %> 
+    </main>
+    <footer>
+        <p>&copy; 2024 Biblioteca</p>
+    </footer>
+</body>
+</html>

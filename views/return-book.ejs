@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devolver Livro</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Devolver Livro</h1>
+        <nav>
+            <ul>
+              <li><a href="/">Ver Todos os Livros</a></li>
+              <li><a href="/add-book">Adicionar Novo Livro</a></li>
+              <li><a href="/borrow">Fazer emprestimo</a></li>
+              <li><a href="/return-book">Devolver Livro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Informe o ID do Livro a ser Devolvido</h2>
+        <form action="/return-book" method="POST">
+            <label for="bookId">ID do Livro:</label>
+            <input type="text" id="bookId" name="bookId" required><br>
+            <button type="submit">Devolver Livro</button>
+        </form>
+        <% if (message) { %>
+            <p><%= message %></p>
+        <% } %>
+    </main>
+    <footer>
+        <p>&copy; 2024 Biblioteca</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Empréstimo</title>
+</head>
+<body>
+    <header>
+        <h1>Solicitar Empréstimo</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Ver Todos os Livros</a></li>
+              <li><a href="/search">Pesquisar Livros</a></li>
+              <li><a href="/add-book">Adicionar Novo Livro</a></li>
+              <li><a href="/return-book">Devolver Livro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Escolha o Livro para Empréstimo</h2>
+        <form action="/books/borrow" method="POST">
+            <label for="bookId">ID do Livro:</label>
+            <input type="text" id="bookId" name="bookId" required><br>
+            <button type="submit">Solicitar Empréstimo</button>
+        </form>
+        <% if (message) { %>
+            <p><%= message %></p>
+        <% } %>
+    </main>
+    <footer>
+        <p>&copy; 2024 Biblioteca</p>
+    </footer>
+</body>
+</html>
